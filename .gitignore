@@ -3,4 +3,7 @@
 .idea
 .lsp
 .nrepl-port
-.vscode
+js/javascript.js
+ruby/ruby.rb
+index.html
+src/clj_training/clojure.clj
