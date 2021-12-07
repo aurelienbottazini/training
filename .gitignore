@@ -10,3 +10,4 @@ clojure/src/training.clj
 js/node_modules
 styles.css
 /ruby/ruby.spec.rb
+.clj-kondo
