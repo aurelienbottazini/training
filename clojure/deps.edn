@@ -4,8 +4,12 @@
   :deps       {org.clojure/clojure   {:mvn/version "1.10.1"}
   clj-http/clj-http              {:mvn/version "3.10.1"}
   enlive/enlive                {:mvn/version "1.1.6"}}
-  :aliases
-  {:nrepl {:extra-deps {nrepl/nrepl {:mvn/version "0.8.3"}} :main-opts ["-m" "nrepl.cmdline"]}
+  :aliases {:nrepl {:extra-deps {nrepl/nrepl {:mvn/version "0.8.3"}
+                        cider/cider-nrepl {:mvn/version "0.27.3"}}
+                        :main-opts ["-m" "nrepl.cmdline"
+                                    "-M" "clojure.main"
+                                    "--middleware" "[cider.nrepl/cider-middleware]"
+                                    "--interactive" "true"]}
   :socket-repl {:exec-fn clojure.core.server/start-server
     :exec-args {:name "server"
     :port 5555
