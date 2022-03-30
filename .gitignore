@@ -13,3 +13,4 @@ styles.css
 .clj-kondo
 
 training.md
+src/clj_training/clojure.clj
