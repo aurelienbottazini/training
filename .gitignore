@@ -18,3 +18,4 @@ clojure/src/clj_training/clojure.cljs
 clojure/src/clj_training/clojure.cljc
 .shadow-cljs/
 node_modules/
+clojure/out/training.js
