@@ -15,4 +15,7 @@
                          :exec-args {:name "server"
                                      :port 5555
                                      :accept clojure.core.server/repl
-                                     :server-daemon false}}}}
+                                     :server-daemon false}}
+
+           :repl/socket-node
+           {:jvm-opts ["-Dclojure.server.repl={:port,5556,:accept,cljs.server.node/repl}"]}}}
