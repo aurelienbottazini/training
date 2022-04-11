@@ -1,11 +1,18 @@
 ;; shadow-cljs configuration
 {:source-paths
- ["src/dev"
-  "src/main"
-  "src/test"]
+ ["src"]
 
  :dependencies
  []
 
  :builds
- {}}
+;; To connect to a repl
+;; Run
+;; $ shadow-cljs watch training
+;; Load the compiled script with
+;; $ node -e "require('./out/training.js')"
+;; You can now load the compiled script from your repl environement and it will connect
+;; tutkain doc: https://tutkain.flowthing.me/#starting-a-shadow-cljs-socket-repl
+ {:training   {:target :node-library
+               :exports-var clj-training.clojure/foo
+               :output-to "out/training.js"}}}
