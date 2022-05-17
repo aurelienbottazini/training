@@ -19,3 +19,7 @@ clojure/src/clj_training/clojure.cljc
 .shadow-cljs/
 node_modules/
 clojure/out/training.js
+/.calva/
+/clojure/.calva/
+/js/typescript.ts
+/training.css
