@@ -23,3 +23,5 @@ clojure/out/training.js
 /clojure/.calva/
 /js/typescript.ts
 /training.css
+
+markdown.md
