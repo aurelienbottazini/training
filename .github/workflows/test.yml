@@ -10,10 +10,10 @@ jobs:
     name: release
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: github release
         run: |
             echo ${{ github.event.pull_request.body }} >> release_description.txt
-            echo release_description.txt
-            # gh release create "js-v$(grep \"version\" ./packages/js/package.json | awk -F \" '{print $4}')" -t "js-v$(grep \"version\" ./packages/js/package.json | awk -F \" '{print $4}')" -n "${{ github.event.pull_request.body }}"
+            gh release create v1.2.3 -t "0.0.1" -F ./release_description.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
