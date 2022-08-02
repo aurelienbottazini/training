@@ -1,0 +1,21 @@
+name: test description
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+
+jobs:
+  build:
+    if: contains(github.event.pull_request.labels.*.name, 'js-release-pr')
+    name: check_description
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: github release
+        if: contains(github.event.pull_request.body, 'UPDATE DESCRIPTION') != true
+        run: |
+            echo ${{ github.event.pull_request.body }} >> release_description.txt
+            gh release create v1.2.3 -t "0.0.1" -F ./release_description.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
