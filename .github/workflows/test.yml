@@ -1,0 +1,18 @@
+name: test github action
+
+on:
+  pull_request:
+    types: [edited]
+
+jobs:
+  test:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: github release
+        run: |
+            cat ${{ github.event.pull_request.body }} >> release_description.txt
+            echo release_description.txt
+            # gh release create "js-v$(grep \"version\" ./packages/js/package.json | awk -F \" '{print $4}')" -t "js-v$(grep \"version\" ./packages/js/package.json | awk -F \" '{print $4}')" -n "${{ github.event.pull_request.body }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
