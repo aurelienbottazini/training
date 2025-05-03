@@ -5,3 +5,4 @@ touch js/typescript.ts
 mkdir -p clojure/src/clj_training
 touch clojure/src/clj_training/clojure.clj
 touch markdown.md
+touch main.css
